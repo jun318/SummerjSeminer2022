@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CSVPrinter {
-    Reader in;
+    Reader inLine;
     public CSVPrinter(String fileName) throws FileNotFoundException {
-        in = new FileReader(fileName);
+        inLine = new FileReader(fileName);
     }
     public  Iterable<CSVRecord> read() throws IOException {
-        Iterable<CSVRecord> records = CSVFormat.DEFAULT.parse(this.in);
+        Iterable<CSVRecord> records = CSVFormat.DEFAULT.parse(this.inLine);
         return records;
     }
 
